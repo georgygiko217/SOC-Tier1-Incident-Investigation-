@@ -1,0 +1,13 @@
+record_id,timestamp,source,event_id,user,host,src_ip,action,detail
+P01,2026-11-10T14:00:00Z,email,-,dana,FIN-09,198.51.100.30,delivered,"message_id=M202; from=billing@invoice-help.example; subject=Invoice overdue; attachment=Invoice.zip; spf=pass; dkim=pass; dmarc=pass"
+P02,2026-11-10T14:02:00Z,WindowsSecurity,4625,leo,FS-02,10.30.0.21,failure,"logon_type=3; reason=bad_password"
+P03,2026-11-10T14:03:00Z,WindowsSecurity,4625,leo,FS-02,10.30.0.21,failure,"logon_type=3; reason=bad_password"
+P04,2026-11-10T14:04:00Z,WindowsSecurity,4625,leo,FS-02,10.30.0.21,failure,"logon_type=3; reason=bad_password"
+P05,2026-11-10T14:07:00Z,WindowsSecurity,4624,leo,FS-02,10.30.0.21,success,"logon_type=3; logon_id=0xB22"
+P06,2026-11-10T14:18:00Z,EDR,-,dana,FIN-09,10.30.0.19,file_open,"file=C:\Users\dana\Downloads\Invoice.zip; extracted_file=Invoice.lnk; origin_message=M202"
+P07,2026-11-10T14:19:00Z,EDR,-,dana,FIN-09,10.30.0.19,process_start,"parent=explorer.exe; image=powershell.exe; command=powershell.exe -NoProfile -WindowStyle Hidden -File C:\Users\dana\AppData\Local\Temp\invoice-check.ps1; process_id=6220; trigger_file=Invoice.lnk"
+P08,2026-11-10T14:19:01Z,PowerShell,4104,dana,FIN-09,10.30.0.19,script_logged,"script=Get-ComputerInfo; process_id=6220; script_path=C:\Users\dana\AppData\Local\Temp\invoice-check.ps1"
+P09,2026-11-10T14:19:04Z,proxy,-,dana,FIN-09,10.30.0.19,allowed,"destination=invoice-help.example; method=POST; status=200; bytes_out=2048; initiating_process_id=6220"
+P10,2026-11-10T14:20:00Z,EDR,-,dana,FIN-09,10.30.0.19,alert,"rule=Unusual PowerShell from user-writable location; process_id=6220; prevention_action=none"
+P11,2026-11-10T14:21:00Z,EDR,-,svc_ops,OPS-12,10.30.0.5,process_start,"parent=ManagementAgent.exe; image=powershell.exe; command=powershell.exe -File C:\Ops\inventory.ps1; process_id=7100"
+P12,2026-11-10T14:22:00Z,change_record,-,svc_ops,MGMT-02,10.30.0.5,verified,"change_id=CHG-209; approved inventory on OPS-12 at 14:21; hash matches approved script; owner confirms execution"
